@@ -10,6 +10,10 @@ DOMAIN-SUFFIX,vsean.net
 DOMAIN-SUFFIX,jsdelivr.net
 # 其他域名
 DOMAIN-SUFFIX,kit327.com
+DOMAIN-SUFFIX,987666.xyz
+DOMAIN-SUFFIX,clsoo.net
+DOMAIN-SUFFIX,imaybe.cn
+DOMAIN-SUFFIX,conns.eu.org
 # DDNS
 DOMAIN-KEYWORD,synology
 DOMAIN-KEYWORD,quickconnect
@@ -25,15 +29,6 @@ DOMAIN-SUFFIX,members.3322.org
 # Windows 网络连接探测
 DOMAIN-SUFFIX,msftconnecttest.com
 DOMAIN-SUFFIX,msftncsi.com
-# 暴雪战网国际服下载节点
-DOMAIN-SUFFIX,blizzard.gcdn.cloudn.co.kr
-DOMAIN-SUFFIX,level3.blizzard.com
-DOMAIN-SUFFIX,kr.cdn.blizzard.com
-DOMAIN-SUFFIX,us.cdn.blizzard.com
-DOMAIN-SUFFIX,eu.cdn.blizzard.com
-IP-CIDR,137.221.64.0/24,no-resolve
-IP-CIDR,8.251.135.126/32,no-resolve
-IP-CIDR,8.251.246.126/32,no-resolve
 # EA-Desktop 下载节点
 DOMAIN-SUFFIX,origin-a.akamaihd.net
 IP-CIDR,104.75.169.19/32,no-resolve
@@ -41,9 +36,6 @@ IP-CIDR,104.75.169.19/32,no-resolve
 DOMAIN,pf-cdn-content-prod.azureedge.net
 # 松下智能家居
 DOMAIN-SUFFIX,psmartcloud.com
-# 暴雪战网国服相关
-DOMAIN-SUFFIX,netease.com
-DOMAIN-SUFFIX,leihuo.netease.com
 # PT 下载相关
 DOMAIN-KEYWORD,tracker
 # Akamai CDN
