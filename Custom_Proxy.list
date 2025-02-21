@@ -4,6 +4,8 @@
 DOMAIN-SUFFIX,jsdelivr.net
 # synology
 DOMAIN-SUFFIX,synology.com
+# xAI
+DOMAIN-SUFFIX,x.ai
 # EA Desktop 云同步
 #DOMAIN-SUFFIX,cloudsync-prod.s3.us-east-1.amazonaws.com
 # GooglePlay 相关
