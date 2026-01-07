@@ -6,6 +6,8 @@ DOMAIN-SUFFIX,jsdelivr.net
 DOMAIN-SUFFIX,synology.com
 # xAI
 DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,grokipedia.com
 # cline
 DOMAIN-SUFFIX,cline.bot
 # 测速 IP
