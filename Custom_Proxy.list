@@ -1,5 +1,7 @@
 # 强制代理列表，来自个人收集
 
+# larksuite
+DOMAIN-SUFFIX,larksuite.com
 # CDN
 DOMAIN-SUFFIX,jsdelivr.net
 # synology
