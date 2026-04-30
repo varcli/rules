@@ -10,21 +10,6 @@ DOMAIN-SUFFIX,synology.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,grokipedia.com
-# kiro.dev
-DOMAIN-SUFFIX,kiro.dev
-DOMAIN-SUFFIX,awsapps.com
-DOMAIN-SUFFIX,amazonaws.com
-# DOMAIN-SUFFIX,prod.us-east-1.auth.desktop.kiro.dev
-# DOMAIN-SUFFIX,prod.us-east-1.telemetry.desktop.kiro.dev
-# DOMAIN-SUFFIX,prod.download.desktop.kiro.dev
-# DOMAIN-SUFFIX,q.us-east-1.amazonaws.com
-# DOMAIN-SUFFIX,q.eu-central-1.amazonaws.com
-# DOMAIN-SUFFIX,runtime.us-east-1.kiro.dev
-# DOMAIN-SUFFIX,runtime.eu-central-1.kiro.dev
-# DOMAIN-SUFFIX,management.us-east-1.kiro.dev
-# DOMAIN-SUFFIX,management.eu-central-1.kiro.dev
-# DOMAIN-SUFFIX,telemetry.us-east-1.kiro.dev
-# DOMAIN-SUFFIX,telemetry.eu-central-1.kiro.dev
 # cline
 DOMAIN-SUFFIX,cline.bot
 # 测速 IP
