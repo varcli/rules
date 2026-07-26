@@ -1,0 +1,43 @@
+# ==========================================
+# Custom Developer Rules
+# 开发者专属自定义规则库
+# 格式: DOMAIN-SUFFIX,域名 (匹配主域名及子域名)
+#      DOMAIN-KEYWORD,关键词 (匹配包含该关键词的域名)
+# ==========================================
+
+# > Docker / 容器生态
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,docker.io
+DOMAIN-SUFFIX,docker.elastic.co
+DOMAIN-SUFFIX,hub.docker.com
+DOMAIN-SUFFIX,alpinelinux.org
+DOMAIN-SUFFIX,k8s.io
+DOMAIN-SUFFIX,kubernetes.io
+DOMAIN-SUFFIX,ghr.io
+DOMAIN-SUFFIX,ghcr.io
+
+# > 常用前端与后端包管理器 (NPM / Python / Go / Java)
+DOMAIN-SUFFIX,npmjs.com
+DOMAIN-SUFFIX,npmjs.org
+DOMAIN-SUFFIX,yarnpkg.com
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,pythonhosted.org
+DOMAIN-SUFFIX,golang.org
+DOMAIN-SUFFIX,pkg.go.dev
+DOMAIN-SUFFIX,maven.apache.org
+DOMAIN-SUFFIX,gradle.org
+
+# > JDK & Android SDK 下载
+DOMAIN-SUFFIX,oracle.com
+DOMAIN-SUFFIX,openjdk.org
+DOMAIN-SUFFIX,openjdk.java.net
+DOMAIN-SUFFIX,adoptium.net
+DOMAIN-SUFFIX,azul.com
+DOMAIN-SUFFIX,corretto.aws
+DOMAIN-SUFFIX,android.com
+
+# > 补充的其他经常被墙的工具文档库
+DOMAIN-SUFFIX,gitbook.io
+DOMAIN-SUFFIX,gitbook.com
+DOMAIN-SUFFIX,readthedocs.io
+DOMAIN-SUFFIX,postman.com
