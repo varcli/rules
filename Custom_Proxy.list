@@ -31,8 +31,11 @@ DOMAIN-SUFFIX,arduino.cc
 DOMAIN-SUFFIX,gamsgo.com
 DOMAIN-SUFFIX,linux.do
 DOMAIN-SUFFIX,anyrouter.top
+DOMAIN-SUFFIX,agentrouter.org
 DOMAIN,download.proxmox.com
 DOMAIN-SUFFIX,sagernet.org
 DOMAIN-SUFFIX,iyzico.com
 DOMAIN-SUFFIX,polyfill.io
 DOMAIN-SUFFIX,cluster-fluster.com
+DOMAIN-SUFFIX,dev.meta.ai
+DOMAIN-SUFFIX,meta.ai
