@@ -15,6 +15,9 @@ DOMAIN-SUFFIX,imaybe.cn
 DOMAIN-SUFFIX,varcli.cn
 DOMAIN-SUFFIX,varcli.com
 DOMAIN-SUFFIX,conns.eu.org
+DOMAIN-SUFFIX,ldspro.qzz.io
+DOMAIN-SUFFIX,ldcstore.com
+DOMAIN-SUFFIX,ldcstatic.com
 # DDNS
 DOMAIN-KEYWORD,synology
 DOMAIN-KEYWORD,quickconnect
