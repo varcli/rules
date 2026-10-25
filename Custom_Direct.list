@@ -1,24 +1,18 @@
-# 强制直连域名列表，来自个人收集
-# 部分域名可能和中国大陆域名列表存在重叠
+# ==========================================
+# Custom Direct Rules
+# 强制直连自定义规则库
+# 适用于：国内/本地无需代理的服务
+# ==========================================
 
-# ImmortalWrt 在线更新服务
-#DOMAIN-SUFFIX,sysupgrade.kyarucloud.moe
-# ImmortalWrt 软件仓库
-DOMAIN-SUFFIX,immortalwrt.org
-DOMAIN-SUFFIX,vsean.net
-# GitHub CDN
-# DOMAIN-SUFFIX,jsdelivr.net
-# 其他域名
+# > 个人专属域名
 DOMAIN-SUFFIX,987666.xyz
 DOMAIN-SUFFIX,clsoo.net
 DOMAIN-SUFFIX,imaybe.cn
 DOMAIN-SUFFIX,varcli.cn
 DOMAIN-SUFFIX,varcli.com
 DOMAIN-SUFFIX,conns.eu.org
-DOMAIN-SUFFIX,ldspro.qzz.io
-DOMAIN-SUFFIX,ldcstore.com
-DOMAIN-SUFFIX,ldcstatic.com
-# DDNS
+
+# > NAS、DDNS 与 IP 探测
 DOMAIN-KEYWORD,synology
 DOMAIN-KEYWORD,quickconnect
 DOMAIN-SUFFIX,checkip.dyndns.org
@@ -29,38 +23,29 @@ DOMAIN-SUFFIX,api.myip.com
 DOMAIN-SUFFIX,ip-api.com
 DOMAIN-SUFFIX,ipapi.co
 DOMAIN-SUFFIX,ip6.seeip.org
+DOMAIN-SUFFIX,ipinfo.io
 DOMAIN-SUFFIX,members.3322.org
-# Windows 网络连接探测
+
+# > 系统服务与网络探测
+# Windows 网络连接探测 (防止显示无网络)
 DOMAIN-SUFFIX,msftconnecttest.com
 DOMAIN-SUFFIX,msftncsi.com
-# EA-Desktop 下载节点
-DOMAIN-SUFFIX,origin-a.akamaihd.net
-IP-CIDR,104.75.169.19/32,no-resolve
-# 微软飞行模拟 2020 游戏内下载 CDN
-DOMAIN,pf-cdn-content-prod.azureedge.net
-# 松下智能家居
-DOMAIN-SUFFIX,psmartcloud.com
-# PT 下载相关
-DOMAIN-KEYWORD,tracker
-# Akamai CDN
-DOMAIN-SUFFIX,akamaihd.net
-# FinalShell
-IP-CIDR,5.5.5.5/32,no-resolve
-# Emby 小雅 相关
+# UniGetUI / PowerShell Gallery
+DOMAIN-SUFFIX,powershellgallery.com
+# NTP Pool Project (时间同步)
+DOMAIN-SUFFIX,pool.ntp.org
+
+# > ImmortalWrt / 软路由固件
+# DOMAIN-SUFFIX,sysupgrade.kyarucloud.moe
+DOMAIN-SUFFIX,immortalwrt.org
+DOMAIN-SUFFIX,vsean.net
+
+# > 杂项与特定软件工具
 DOMAIN-SUFFIX,ddsrem.com
-DOMAIN-SUFFIX,ipinfo.io
 DOMAIN-SUFFIX,ggbond.org
 DOMAIN-SUFFIX,nn.ci
 DOMAIN-SUFFIX,xhofe.top
 DOMAIN-SUFFIX,xiaoyakeeper.u.1996999.xyz
 DOMAIN-SUFFIX,wwwh.eu.org
-# IPTV 相关
 DOMAIN-SUFFIX,112114.xyz
-# 国内 CDN
-DOMAIN-SUFFIX,cjjd19.com
-# UniGetUI
-DOMAIN-SUFFIX,powershellgallery.com
-# NTP Pool Project
-DOMAIN-SUFFIX,pool.ntp.org
-# Dell
-DOMAIN-SUFFIX,dell.com
+
