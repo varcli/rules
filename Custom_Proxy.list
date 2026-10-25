@@ -1,42 +1,49 @@
-# 强制代理列表，来自个人收集
+# ==========================================
+# Custom Proxy Rules
+# 强制代理自定义规则库
+# 适用于：极易被墙、被精准阻断或需要代理环境加速的服务
+# ==========================================
 
-# larksuite
+# > 开发者生态与嵌入式硬件
+DOMAIN-SUFFIX,platformio.org
+DOMAIN-SUFFIX,arduino.cc
+
+# > 服务器、虚拟机与软路由生态
+DOMAIN,download.proxmox.com
+DOMAIN-SUFFIX,sagernet.org
+
+# > 社区论坛与办公协作
+# linux.do 主站容易受 DNS 污染，强制代理保证访问稳定性
+DOMAIN-SUFFIX,linux.do
 DOMAIN-SUFFIX,larksuite.com
-# CDN
-DOMAIN-SUFFIX,jsdelivr.net
-# synology
+
+# > NAS 与云同步
 DOMAIN-SUFFIX,synology.com
-# cline
-DOMAIN-SUFFIX,cline.bot
-# 测速 IP
+# EA Desktop 云同步 (备用状态)
+# DOMAIN-SUFFIX,cloudsync-prod.s3.us-east-1.amazonaws.com
+
+# > 游戏服务与主机
+# PS5 STUN
+DOMAIN-SUFFIX,stun.playstation.net
+
+# > Google Play 与谷歌国内特色域名 (解决 Play 商店无法下载/更新)
+DOMAIN-SUFFIX,googleapis.cn
+DOMAIN-SUFFIX,clientservices.googleapis.com
+
+# > CDN 与前端静态库
+DOMAIN-SUFFIX,jsdelivr.net
+
+# > IP 探测、测速与 DNS
 DOMAIN-SUFFIX,skk.moe
 DOMAIN-SUFFIX,ip.sb
 DOMAIN-SUFFIX,ipify.org
-# EA Desktop 云同步
-#DOMAIN-SUFFIX,cloudsync-prod.s3.us-east-1.amazonaws.com
-# GooglePlay 相关
-DOMAIN-SUFFIX,services.googleapis.cn
-DOMAIN-SUFFIX,clientservices.googleapis.com
-DOMAIN-SUFFIX,googleapis.cn
-DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-# PS5 STUN
-DOMAIN-SUFFIX,stun.playstation.net
-# Cloudflare DNS
+# Cloudflare DNS (防污染)
 IP-CIDR,1.1.1.1/32,no-resolve
 IP-CIDR,1.0.0.1/32,no-resolve
-# 嵌入式相关
-DOMAIN-SUFFIX,platformio.org
-DOMAIN-SUFFIX,arduino.cc
-# 其他杂项
-DOMAIN-SUFFIX,gamsgo.com
-DOMAIN-SUFFIX,linux.do
+
+# > 其他杂项
 DOMAIN-SUFFIX,anyrouter.top
 DOMAIN-SUFFIX,agentrouter.org
-DOMAIN,download.proxmox.com
-DOMAIN-SUFFIX,sagernet.org
+DOMAIN-SUFFIX,gamsgo.com
 DOMAIN-SUFFIX,iyzico.com
-DOMAIN-SUFFIX,polyfill.io
 DOMAIN-SUFFIX,cluster-fluster.com
-DOMAIN-SUFFIX,dev.meta.ai
-DOMAIN-SUFFIX,meta.ai
-DOMAIN-SUFFIX,cline.bot
