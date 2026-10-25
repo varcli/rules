@@ -2,42 +2,65 @@
 # Custom Developer Rules
 # 开发者专属自定义规则库
 # 格式: DOMAIN-SUFFIX,域名 (匹配主域名及子域名)
-#      DOMAIN-KEYWORD,关键词 (匹配包含该关键词的域名)
+#       DOMAIN-KEYWORD,关键词 (匹配包含该关键词的域名)
 # ==========================================
 
-# > Docker / 容器生态
+# > Docker / 容器生态与镜像仓库
 DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,docker.io
-DOMAIN-SUFFIX,docker.elastic.co
-DOMAIN-SUFFIX,hub.docker.com
-DOMAIN-SUFFIX,alpinelinux.org
+DOMAIN-SUFFIX,gcr.io
+DOMAIN-SUFFIX,quay.io
+DOMAIN-SUFFIX,ghcr.io
+DOMAIN-SUFFIX,lscr.io
 DOMAIN-SUFFIX,k8s.io
 DOMAIN-SUFFIX,kubernetes.io
-DOMAIN-SUFFIX,ghr.io
-DOMAIN-SUFFIX,ghcr.io
+DOMAIN-SUFFIX,helm.sh
 
-# > 常用前端与后端包管理器 (NPM / Python / Go / Java)
+# > 常用前端与后端包管理器 (NPM / Python / Go / Java / .NET / Rust)
 DOMAIN-SUFFIX,npmjs.com
 DOMAIN-SUFFIX,npmjs.org
 DOMAIN-SUFFIX,yarnpkg.com
+DOMAIN-SUFFIX,unpkg.com
 DOMAIN-SUFFIX,pypi.org
 DOMAIN-SUFFIX,pythonhosted.org
 DOMAIN-SUFFIX,golang.org
 DOMAIN-SUFFIX,pkg.go.dev
 DOMAIN-SUFFIX,maven.apache.org
 DOMAIN-SUFFIX,gradle.org
+DOMAIN-SUFFIX,nuget.org
+DOMAIN-SUFFIX,crates.io
+DOMAIN-SUFFIX,rustup.rs
 
-# > JDK & Android SDK 下载
+# > SDK & 运行环境下载
 DOMAIN-SUFFIX,oracle.com
 DOMAIN-SUFFIX,openjdk.org
-DOMAIN-SUFFIX,openjdk.java.net
 DOMAIN-SUFFIX,adoptium.net
 DOMAIN-SUFFIX,azul.com
 DOMAIN-SUFFIX,corretto.aws
 DOMAIN-SUFFIX,android.com
+DOMAIN-SUFFIX,dot.net
+DOMAIN-SUFFIX,spring.io
 
-# > 补充的其他经常被墙的工具文档库
+# > 操作系统与服务器环境 (Debian / Alpine / Nginx 等)
+DOMAIN-SUFFIX,debian.org
+DOMAIN-SUFFIX,alpinelinux.org
+DOMAIN-SUFFIX,nginx.org
+DOMAIN-SUFFIX,openresty.org
+
+# > 数据库与中间件
+DOMAIN-SUFFIX,elastic.co
+DOMAIN-SUFFIX,mongodb.com
+DOMAIN-SUFFIX,redis.io
+DOMAIN-SUFFIX,rabbitmq.com
+
+# > 开发者工具、API调试与文档库
 DOMAIN-SUFFIX,gitbook.io
 DOMAIN-SUFFIX,gitbook.com
 DOMAIN-SUFFIX,readthedocs.io
 DOMAIN-SUFFIX,postman.com
+DOMAIN-SUFFIX,getpostman.com
+DOMAIN-SUFFIX,ngrok.com
+DOMAIN-SUFFIX,swagger.io
+DOMAIN-SUFFIX,stackoverflow.com
+DOMAIN-SUFFIX,stackexchange.com
+DOMAIN-SUFFIX,dev.to
