@@ -11,6 +11,8 @@ DOMAIN-SUFFIX,imaybe.cn
 DOMAIN-SUFFIX,varcli.cn
 DOMAIN-SUFFIX,varcli.com
 DOMAIN-SUFFIX,conns.eu.org
+DOMAIN-SUFFIX,icitycore.com
+DOMAIN-SUFFIX,ibuilding3d.com
 
 # > NAS、DDNS 与 IP 探测
 DOMAIN-KEYWORD,synology
