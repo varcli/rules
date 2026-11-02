@@ -1,0 +1,398 @@
+# Clash Party Override · 规则
+
+mode: rule
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# ==================== DNS ====================
+dns:
+  enable: true
+  listen: 127.0.0.1:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - geosite:private
+    - geosite:cn
+    - geosite:apple-cn
+    - +.lan
+    - +.local
+    - +.localhost
+  default-nameserver:
+    - 223.5.5.5
+    - 1.1.1.1
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://1.1.1.1/dns-query
+
+# ==================== 策略组 ====================
+proxy-groups:
+
+  # ---------- 总控 ----------
+  - name: 🚀 手动选择
+    type: select
+    proxies:
+      - 🏠 自建美国
+      - 🇺🇸 美国优选
+      - ⚡ 节点优选
+      - DIRECT
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 手动选择
+
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  # ---------- 物理节点池 ----------
+  - name: 🏠 自建美国
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 50
+    lazy: true
+    filter: "(?i)us-?[a-z]([|]|-vless)"
+    include-all: true
+
+  - name: 🇺🇸 美国优选
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 50
+    lazy: true
+    filter: "(?=.*(🇺🇸|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|纽约|纽纽|亚特兰大|迈阿密|华盛顿|\\bUS(?:[-_ ]?\\d+(?:[-_ ]?[A-Za-z]{2,})?)?\\b|United States|USA|America|JFK|EWR|IAD|ATL|ORD|MIA|NYC|LAX|SFO|SEA|DFW|SJC))"
+    include-all: true
+
+  - name: ⚡ 节点优选
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 50
+    lazy: true
+    filter: "(?!.*(?i)us-?[a-z]([|]|-vless))"
+    include-all: true
+
+  # ---------- 生产力系列 ----------
+  - name: 🧑‍💻 AI编程
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  - name: 🤖 AI模型
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  - name: 🎨 AI媒体
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [⚡ 节点优选, 🇺🇸 美国优选, 🏠 自建美国, 🚀 手动选择]
+
+  - name: 👨‍💻 开发专属
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选, 🎯 全球直连]
+
+  - name: 🚀 GitHub
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选, 🎯 全球直连]
+
+  - name: 🔍 谷歌服务
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  - name: 📢 谷歌FCM
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  - name: 💳 PayPal
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选, 🎯 全球直连]
+
+  - name: 🛒 国外电商
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  # ---------- 微软 / 苹果 优先直连 ----------
+  - name: Ⓜ️ 微软服务
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🎯 全球直连, 🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  - name: 🍎 苹果服务
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🎯 全球直连, 🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  - name: 💾 OneDrive
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🎯 全球直连, 🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+  # ---------- 影音社交 + GFW ----------
+  - name: 🎥 媒体解锁
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [⚡ 节点优选, 🇺🇸 美国优选, 🏠 自建美国, 🚀 手动选择]
+
+  - name: 💬 聊天社交
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [⚡ 节点优选, 🇺🇸 美国优选, 🏠 自建美国, 🚀 手动选择]
+
+  - name: 🛡️ GFW
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [⚡ 节点优选, 🇺🇸 美国优选, 🏠 自建美国, 🚀 手动选择]
+
+  - name: ⏬ PT站点
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🎯 全球直连, ⚡ 节点优选, 🇺🇸 美国优选, 🏠 自建美国, 🚀 手动选择]
+
+  # ---------- 游戏与工具 ----------
+  - name: 🎮 游戏平台
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🎯 全球直连, ⚡ 节点优选, 🏠 自建美国, 🇺🇸 美国优选, 🚀 手动选择]
+
+  - name: 🎮 Steam
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🎯 全球直连, ⚡ 节点优选, 🏠 自建美国, 🇺🇸 美国优选, 🚀 手动选择]
+
+  - name: 🚀 测速工具
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🚀 手动选择, ⚡ 节点优选, 🏠 自建美国, 🇺🇸 美国优选, 🎯 全球直连]
+
+  # ---------- 兜底 ----------
+  - name: 🐟 漏网之鱼
+    type: fallback
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    proxies: [🎯 全球直连, ⚡ 节点优选, 🚀 手动选择, 🏠 自建美国, 🇺🇸 美国优选]
+
+# ==================== 规则集 ====================
+rule-providers:
+
+  # 自定义规则
+  custom_direct:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/varcli/rules/main/Custom_Direct.list
+    path: ./ruleset/custom_direct.list
+
+  custom_proxy:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/varcli/rules/main/Custom_Proxy.list
+    path: ./ruleset/custom_proxy.list
+
+  custom_developer:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/varcli/rules/main/Custom_Developer.list
+    path: ./ruleset/custom_developer.list
+
+  # AI 精细分流（VPSDance）
+  ai_coding:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 28800
+    url: https://ghfast.top/https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/clash/coding.yaml
+    path: ./ruleset/ai_coding.yaml
+
+  ai_model:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 28800
+    url: https://ghfast.top/https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/clash/model.yaml
+    path: ./ruleset/ai_model.yaml
+
+  ai_media:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 28800
+    url: https://ghfast.top/https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/clash/media.yaml
+    path: ./ruleset/ai_media.yaml
+
+  # 广告
+  ban_ad:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./ruleset/ban_ad.list
+
+  # GFW
+  proxy_gfw:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+    path: ./ruleset/proxy_gfw.list
+
+  # 中国相关
+  china_domain:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./ruleset/china_domain.list
+
+  china_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+    path: ./ruleset/china_ip.list
+
+  china_company_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./ruleset/china_company_ip.list
+
+  download:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+    path: ./ruleset/download.list
+
+# ==================== 规则 ====================
+rules:
+  # 局域网
+  - GEOSITE,private,🎯 全球直连
+  - GEOIP,private,🎯 全球直连,no-resolve
+
+  # 自定义优先
+  - RULE-SET,custom_direct,🎯 全球直连
+  - RULE-SET,custom_proxy,🚀 手动选择
+
+  # Cloudflare 优先（避免 Turnstile 被广告误杀）
+  - GEOSITE,cloudflare,👨‍💻 开发专属
+
+  # 广告拦截
+  - GEOSITE,category-ads-all,🛑 广告拦截
+  - RULE-SET,ban_ad,🛑 广告拦截
+
+  # 聊天社交
+  - GEOSITE,telegram,💬 聊天社交
+  - GEOIP,telegram,💬 聊天社交,no-resolve
+  - GEOSITE,whatsapp,💬 聊天社交
+  - GEOSITE,discord,💬 聊天社交
+  - GEOSITE,twitter,💬 聊天社交
+  - GEOIP,twitter,💬 聊天社交,no-resolve
+  - GEOSITE,reddit,💬 聊天社交
+  - GEOSITE,category-social-media-!cn,💬 聊天社交
+
+  # AI 精细分流
+  - RULE-SET,ai_coding,🧑‍💻 AI编程
+  - RULE-SET,ai_model,🤖 AI模型
+  - RULE-SET,ai_media,🎨 AI媒体
+
+  # 媒体解锁
+  - GEOSITE,youtube,🎥 媒体解锁
+  - GEOSITE,netflix,🎥 媒体解锁
+  - GEOIP,netflix,🎥 媒体解锁,no-resolve
+  - GEOSITE,disney,🎥 媒体解锁
+  - GEOSITE,tiktok,🎥 媒体解锁
+  - GEOSITE,hbo,🎥 媒体解锁
+  - GEOSITE,primevideo,🎥 媒体解锁
+  - GEOSITE,apple-tvplus,🎥 媒体解锁
+  - GEOSITE,bahamut,🎥 媒体解锁
+  - GEOSITE,spotify,🎥 媒体解锁
+  - GEOSITE,category-emby,🎥 媒体解锁
+  - GEOSITE,category-entertainment,🎥 媒体解锁
+
+  # 开发者
+  - RULE-SET,custom_developer,👨‍💻 开发专属
+  - GEOSITE,docker,👨‍💻 开发专属
+  - GEOSITE,category-dev,👨‍💻 开发专属
+  - GEOSITE,github,🚀 GitHub
+
+  # 巨头服务
+  - GEOSITE,microsoft,Ⓜ️ 微软服务
+  - GEOSITE,onedrive,💾 OneDrive
+  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,google,🔍 谷歌服务
+  - GEOSITE,googlefcm,📢 谷歌FCM
+
+  # GFW
+  - GEOSITE,gfw,🛡️ GFW
+  - RULE-SET,proxy_gfw,🛡️ GFW
+
+  # 游戏
+  - GEOSITE,steam,🎮 Steam
+  - GEOSITE,category-games,🎮 游戏平台
+  - GEOSITE,category-games@cn,🎯 全球直连
+
+  # 其他
+  - GEOSITE,paypal,💳 PayPal
+  - GEOSITE,category-ecommerce,🛒 国外电商
+  - GEOSITE,category-speedtest,🚀 测速工具
+  - GEOSITE,category-pt,⏬ PT站点
+
+  # 中国直连兜底
+  - GEOSITE,google-cn,🎯 全球直连
+  - RULE-SET,download,🎯 全球直连
+  - RULE-SET,china_domain,🎯 全球直连
+  - RULE-SET,china_ip,🎯 全球直连
+  - RULE-SET,china_company_ip,🎯 全球直连
+  - GEOSITE,cn,🎯 全球直连
+  - GEOIP,cn,🎯 全球直连,no-resolve
+
+  # 最终
+  - MATCH,🐟 漏网之鱼
