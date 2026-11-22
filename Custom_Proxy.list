@@ -17,18 +17,11 @@ DOMAIN-SUFFIX,sagernet.org
 DOMAIN-SUFFIX,linux.do
 DOMAIN-SUFFIX,larksuite.com
 
-# > NAS 与云同步
-DOMAIN-SUFFIX,synology.com
+# > 游戏服务与主机
 # EA Desktop 云同步 (备用状态)
 # DOMAIN-SUFFIX,cloudsync-prod.s3.us-east-1.amazonaws.com
-
-# > 游戏服务与主机
 # PS5 STUN
 DOMAIN-SUFFIX,stun.playstation.net
-
-# > Google Play 与谷歌国内特色域名 (解决 Play 商店无法下载/更新)
-DOMAIN-SUFFIX,googleapis.cn
-DOMAIN-SUFFIX,clientservices.googleapis.com
 
 # > CDN 与前端静态库
 DOMAIN-SUFFIX,jsdelivr.net

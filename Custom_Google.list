@@ -1,0 +1,82 @@
+# 常用 Google 服务，走谷歌服务策略组
+# YouTube、谷歌 FCM、AI 由模板中的专用规则优先匹配
+
+# > Google Play、Android 与应用更新
+DOMAIN-SUFFIX,googleapis.cn
+DOMAIN-SUFFIX,clientservices.googleapis.com
+DOMAIN,play.google.com
+DOMAIN,play-fe.googleapis.com
+DOMAIN,play.googleapis.com
+DOMAIN,android.clients.google.com
+DOMAIN,androidpublisher.googleapis.com
+DOMAIN,androidmanagement.googleapis.com
+DOMAIN,dl-ssl.google.com
+DOMAIN,play-lh.googleusercontent.com
+DOMAIN-SUFFIX,gvt3.com
+
+# > 账号、搜索与翻译
+DOMAIN,accounts.google.com
+DOMAIN,oauth2.googleapis.com
+DOMAIN,openidconnect.googleapis.com
+DOMAIN,myaccount.google.com
+DOMAIN,people.googleapis.com
+DOMAIN,www.google.com
+DOMAIN,search.google.com
+DOMAIN,translate.google.com
+DOMAIN,translation.googleapis.com
+DOMAIN,news.google.com
+
+# > Gmail、日历、通讯与协作
+DOMAIN-SUFFIX,gmail.com
+DOMAIN-SUFFIX,googlemail.com
+DOMAIN,mail.google.com
+DOMAIN,gmail.googleapis.com
+DOMAIN,calendar.google.com
+DOMAIN,calendar.googleapis.com
+DOMAIN,contacts.google.com
+DOMAIN,meet.google.com
+DOMAIN,meet.googleapis.com
+DOMAIN,chat.google.com
+DOMAIN,chat.googleapis.com
+DOMAIN,groups.google.com
+DOMAIN,tasks.google.com
+DOMAIN,tasks.googleapis.com
+
+# > Drive、在线文档与相册
+DOMAIN,drive.google.com
+DOMAIN,drive.googleapis.com
+DOMAIN,drive.usercontent.google.com
+DOMAIN,drive-data-export.usercontent.google.com
+DOMAIN,docs.google.com
+DOMAIN,docs.googleapis.com
+DOMAIN,sheets.googleapis.com
+DOMAIN,slides.googleapis.com
+DOMAIN,forms.googleapis.com
+DOMAIN,sites.google.com
+DOMAIN,keep.google.com
+DOMAIN,photos.google.com
+DOMAIN,photoslibrary.googleapis.com
+DOMAIN,takeout.google.com
+
+# > 地图、地点与地球
+DOMAIN,maps.google.com
+DOMAIN,maps.googleapis.com
+DOMAIN,maps.gstatic.com
+DOMAIN,mapsresources-pa.googleapis.com
+DOMAIN,places.googleapis.com
+DOMAIN,routes.googleapis.com
+DOMAIN,roads.googleapis.com
+DOMAIN,streetviewpixels-pa.googleapis.com
+DOMAIN,earth.google.com
+DOMAIN,earthengine.googleapis.com
+
+# > Chrome、扩展商店与 Google Cloud
+DOMAIN,chromewebstore.google.com
+DOMAIN,clients2.google.com
+DOMAIN,chromiumdash.appspot.com
+DOMAIN,cloud.google.com
+DOMAIN,console.cloud.google.com
+DOMAIN,cloudshell.googleapis.com
+DOMAIN,cloudresourcemanager.googleapis.com
+DOMAIN,serviceusage.googleapis.com
+DOMAIN,billing.googleapis.com
